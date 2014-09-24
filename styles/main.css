@@ -1,0 +1,105 @@
+h1 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+td,th {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    font-size: 18px;
+    background-color: #C9E7E9;
+    
+}
+
+td {
+    font-size: 16px;
+}
+
+#sortbar {
+    padding-left: 40px;
+}
+
+.sort-text, .filter-text {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.filter-text {
+    margin-left: 50px;
+}
+
+#sortbar {
+    background-color: #80C6CB;
+    height: 35px;
+    padding-top: 4px;
+}
+
+#sortbar label, select {
+    margin-right:10px;
+}
+
+#sortbar span {
+    margin-right 5px;
+}
+
+label[for=sort-premieres]{
+    margin-left: 5px;
+}
+
+#sortbar span {
+    font-weight: bold;
+}
+
+#sortbar input {
+    font-size: 12px;
+}
+
+#showsList {
+    color: #4F6B74;
+    width: 100%;
+}
+
+tr {
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+tr:first-child {
+    border-bottom: none;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.show-title {
+    font-weight: bold;
+}
+
+.show-overview {
+    width: 550px;
+    font-size: 12px;
+}
+
+img.flag {
+    margin-top: -5px;
+}
+
+.qtipCustom{
+    border-color: #ddd;
+    background-color: #ddd;
+    max-width: 450px;
+}
+
+.qtipCustom .qtip-content{
+    font-size: 12px;
+}
+

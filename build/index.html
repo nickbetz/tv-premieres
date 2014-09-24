@@ -1,0 +1,97 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.css">
+    <link rel="stylesheet" href="styles/main.css">
+    
+  </head>
+  <body data-ng-app="tvpremieres" data-ng-controller="MainCtrl">
+    <script type="text/ng-template" id="qtip.html">
+    <div>
+        {{text}}
+    </div> 
+  </script>
+
+    <div class="container">
+        <h1>Upcoming TV Show Premieres</h1>
+
+        <div id="sortbar">
+            <span class="sort-text">Sort By:</span> 
+       
+            <input type="radio" value="date" data-ng-model="sortBy" id="sort-date">
+            <label for=sort-date>Date</label>
+            <input type="radio" value="title" data-ng-model="sortBy" id="sort-title">
+            <label for=sort-title>Title</label>
+            
+            <span class="filter-text">Filter:</span>
+            <!-- <input type="checkbox" value="series_premieres" id="sort-premieres" data-ng-model="filter_series_premieres"><span id="sort-premieres-text"><label for=sort-premieres>Series Premieres</span> -->
+            <span>Genre</span> 
+            <select data-ng-model="genreFilter" data-ng-options="genre for genre in availableGenres">
+                <option value="">All</option>
+            </select>
+             <span>Network</span> 
+            <select data-ng-model="networkFilter" data-ng-options="network for network in availableNetworks | orderBy:network">
+                <option value="">All</option>
+            </select> 
+            <span class="filter-text">Search:</span>
+            <input type="text" data-ng-model="searchText" />
+
+        </div>
+        
+        <table id="showsList">
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Genres</th>
+                <th>Network</th>
+                <th>Airtime</th>
+                <th>Season</th>
+                <th>More Info</th>
+            </tr>
+            <tr data-ng-repeat="tvshow in tvshows | orderBy:sortOrder | seriespremiere:filter_series_premieres | genres:genreFilter | networks:networkFilter | filter:searchText">
+                
+                <td><img src="{{tvshow.show.images.poster}}" width="100" height="147" /></td>
+                
+                <td><span class="show-title">{{tvshow.show.title}}<span> <br><a href="#" class="show-overview" qtip="tvshow.show.overview">Overview</a></td>
+                <td>{{tvshow.date}}</td>
+                <td>
+                    <ul>
+                        <li data-ng-repeat="genre in tvshow.show.genres">{{genre}}</li>
+                    </ul>
+                </td>
+                <td>{{tvshow.show.network}} &nbsp;<img data-ng-show="tvshow.show.country" src="images/flags/{{tvshow.show.country}}.png" alt="{{tvshow.show.country}}" class="flag" /></td>
+                <td>{{tvshow.show.air_day_localized}}s<br />{{tvshow.show.air_time}}/{{tvshow.show.air_time - 1}}C
+                <td>{{tvshow.episode.season}}</td>
+                <td><ul id="more-info-list"><li data-ng-show="tvshow.show.url"><a href="{{tvshow.show.url}}" target="_blank">trakt</a></li>
+                    <li data-ng-show="tvshow.show.imdb_id"><a href="http://www.imdb.com/title/{{tvshow.show.imdb_id}}" target="_blank">IMDB</a><li>
+                    <li data-ng-show="tvshow.show.tvrage_id"><a href="http://www.tvrage.com/shows/id-{{tvshow.show.tvrage_id}}" target="_blank">TVRage</a><li>
+                    </ul>
+                </td>
+            <tr>
+        </table>
+    </div>
+
+    <script src="scripts/lib/jquery-2.1.1.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.js"></script>
+    <script src="scripts/lib/angular.js"></script>
+    <script src="scripts/lib/ui-utils.js"></script>
+    <script src="scripts/lib/angular-cookies.js"></script>
+    <script src="scripts/lib/angular-resource.js"></script>
+    <script src="scripts/lib/angular-sanitize.js"></script>
+    <script src="scripts/lib/angular-route.js"></script>
+    <script src="scripts/lib/moment.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+</body>
+</html>
