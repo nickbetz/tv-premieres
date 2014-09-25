@@ -12,7 +12,6 @@ angular.module('tvpremieres')
     var today = new Date();
     var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
 
-    //$http.jsonp('http://api.trakt.tv/calendar/premieres.json/' +$scope.apiKey +'?callback=JSON_CALLBACK')
     $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' + $scope.apiKey + '/' + apiDate + '/' + 30 + '/?callback=JSON_CALLBACK')
 
         .success(function(data){
@@ -61,7 +60,6 @@ angular.module('tvpremieres')
 
                     // Format date to be more readable
                     tvshow.date = moment(tvshow.date).format('MMMM DD');
-                    console.log(unformatedDate);
 
                     // Update format of airtime
                     tvshow.show.air_time = tvshow.show.air_time.split(':')[0];
@@ -87,10 +85,6 @@ angular.module('tvpremieres')
                     $scope.tvshows.push(tvshow);
                   });
               });
-
-            console.log($scope.tvshows);
-            console.log($scope.availableGenres);
-            console.log($scope.availableNetworks);
         });
 
     })
