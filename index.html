@@ -22,6 +22,7 @@
     <div class="container">
         <h1>Upcoming TV Show Premieres</h1>
 
+
         <div id="sortbar">
             <span class="sort-text">Sort By:</span> 
        
@@ -33,7 +34,7 @@
             <span class="filter-text">Filter:</span>
             <!-- <input type="checkbox" value="series_premieres" id="sort-premieres" data-ng-model="filter_series_premieres"><span id="sort-premieres-text"><label for=sort-premieres>Series Premieres</span> -->
             <span>Genre</span> 
-            <select data-ng-model="genreFilter" data-ng-options="genre for genre in availableGenres">
+            <select data-ng-model="genreFilter" data-ng-options="genre for genre in availableGenres | orderBy:'genre'">
                 <option value="">All</option>
             </select>
              <span>Network</span> 
@@ -44,6 +45,8 @@
             <input type="text" data-ng-model="searchText" />
 
         </div>
+
+
         
         <table id="showsList">
             <tr>
@@ -77,6 +80,8 @@
                 </td>
             <tr>
         </table>
+
+        <div id="loading"><img src="images/loading.gif" /></div>
     </div>
 
     <script src="scripts/lib/jquery-2.1.1.min.js"></script>

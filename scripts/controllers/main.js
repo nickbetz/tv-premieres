@@ -8,13 +8,16 @@ angular.module('tvpremieres')
     $scope.availableNetworks = [];
     $scope.genreFilter = null;
     $scope.networkFilter = null;
-    
+
     var today = new Date();
     var apiDate = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + "" + ("0" + today.getDate()).slice(-2);
+    var errorMsg = 'There seems to be an problem with the data source. Please refresh or try again later. I apologize for the inconvenience.';
+
 
     $http.jsonp('http://api.trakt.tv/calendar/premieres.json/' + $scope.apiKey + '/' + apiDate + '/' + 30 + '/?callback=JSON_CALLBACK')
 
         .success(function(data){
+            $('#loading').hide();
 
             // Make each show it's own object
             angular.forEach(data, function(value){
@@ -41,6 +44,7 @@ angular.module('tvpremieres')
                         if (exists === false && genre != '') {
                             $scope.availableGenres.push(genre);
                         }
+
                     });
 
                     // create a list of networks
@@ -83,8 +87,16 @@ angular.module('tvpremieres')
 
                     // Push the new object into our own array
                     $scope.tvshows.push(tvshow);
+
+                    // Sort the genre and network filters
+                    $scope.availableGenres.sort();
+                    $scope.availableNetworks.sort();
                   });
               });
+        })
+        .error(function(){
+            $('#loading').hide();
+            $('.container').append('<div class=\'feed-error\'<p>'+errorMsg+'</p></div>');
         });
 
     })
