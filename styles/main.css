@@ -1,6 +1,22 @@
-h1 {
+header {
+    height: 110px;
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 675px;
+}
+
+header img {
+    float: left;
+}
+
+h1 {
+    color: #d19c2c;
+    left: 25px;
+    margin-bottom: 40px;
+    position: relative;
     text-align: center;
+    top: 45px;
 }
 
 td,th {
@@ -9,23 +25,33 @@ td,th {
 }
 
 th {
+    background-color: #5EA2A7;
+    color: white;
     font-size: 18px;
-    background-color: #C9E7E9;
-    
 }
 
 td {
     font-size: 16px;
 }
 
-#loading {
-    text-align: center;
-    margin-top: 50px;
+.container {
+    margin-bottom: 50px;
 }
 
-#sortbar {
-    padding-left: 40px;
+.sort-toggle {
+    background-image: url('../images/toggle-expand.png');
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 20px;
 }
+
+.sort-toggle.expanded {
+    background-image: url('../images/toggle-collapse.png');
+}
+
 
 .sort-text, .filter-text {
     font-size: 16px;
@@ -37,17 +63,30 @@ td {
     margin-left: 50px;
 }
 
-#sortbar {
-    background-color: #80C6CB;
-    height: 35px;
-    padding-top: 4px;
+.sortbar-container {
+    background-color: #fff;
+    clear: both;
+    display: none;
+    height: 60px;
 }
 
-#sortbar label, select {
+.sortbar {
+    border: 3px solid #5EA2A7;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    float: right;
+    margin-top: 7px;
+    padding: 10px 10px 5px;
+    position: relative;
+    width: 800px;
+}
+
+.sortbar label, select {
     margin-right:10px;
+    color: #2f4146;
 }
 
-#sortbar span {
+.sortbar span {
     margin-right 5px;
 }
 
@@ -55,12 +94,53 @@ label[for=sort-premieres]{
     margin-left: 5px;
 }
 
-#sortbar span {
+.sortbar span {
     font-weight: bold;
 }
 
-#sortbar input {
+.sortbar input {
     font-size: 12px;
+}
+
+.sort, .filter, .search {
+    float: left;
+}
+
+.sort {
+    margin-right: 40px;
+    width: 110px;
+}
+
+.sort img {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    padding-top: 7px;
+}
+
+.sort label {
+    margin: 0;
+}
+
+.filter {
+    margin-right: 40px;
+    width: 320px;
+}
+
+.filter img {
+    float: left;
+    margin-right: 20px;
+}
+
+.search {
+
+}
+
+.search input {
+    border-radius: 10px;
+    font-size: 16px;
+    height: 30px;
+    width: 220px;
 }
 
 #showsList {
@@ -69,12 +149,15 @@ label[for=sort-premieres]{
 }
 
 tr {
-    background-color: #F2F2F2;
-    border-bottom: 1px solid #D3D3D3;
+    background-color: #f9f9f9;
 }
 
 tr:first-child {
     border-bottom: none;
+}
+
+tr:nth-child(odd) {
+    background-color: #f3f3f3;
 }
 
 ul {
@@ -85,22 +168,28 @@ ul li {
     list-style-type: none;
 }
 
+.table-container {
+    background-color: #f9f9f9;
+    clear: both;
+    padding-bottom: 10px;
+}
+
 .show-title {
     font-weight: bold;
 }
 
 .show-overview {
-    width: 550px;
     font-size: 12px;
+    width: 550px;
 }
 
-img.flag {
-    margin-top: -5px;
+.genre {
+    text-transform: capitalize;
 }
 
 .qtipCustom{
-    border-color: #ddd;
     background-color: #ddd;
+    border-color: #999;
     max-width: 450px;
 }
 
@@ -108,9 +197,25 @@ img.flag {
     font-size: 12px;
 }
 
+.view-more {
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    font-size: 17px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 500px;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 50px;
+}
+
 .feed-error {
     text-align: center;
     margin-top: 50px;
     font-size: 16px;
 }
-
