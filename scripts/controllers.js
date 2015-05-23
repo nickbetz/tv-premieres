@@ -33,7 +33,6 @@ app.controller('MainController', function($scope,$http,premieresService){
             if(tvshow.show.airs.day && tvshow.show.airs.time){
                  tvshow.show.airdate = tvshow.show.airs.day;
                  tvshow.show.airtime = formatAirTime(tvshow.show.airs.time);
-                 console.log(tvshow.show.airdate +' '+tvshow.show.airtime);
 
                  tvshow.show.timezone = formatTimezone(tvshow);
                  if (tvshow.show.network == 'Netflix') {
@@ -44,6 +43,9 @@ app.controller('MainController', function($scope,$http,premieresService){
             else {
                 tvshow.show.airdate = 'N/A';
             }
+
+            // strip "(US)" from networks
+            tvshow.show.network = tvshow.show.network.replace('(US)','');
 
             // check a shows' genre and add to master genre list if not already present
             angular.forEach(tvshow.show.genres, function(genre){
@@ -64,8 +66,10 @@ app.controller('MainController', function($scope,$http,premieresService){
             $scope.tvshows.push(tvshow);
 
         });
-        console.log($scope.tvshows);
 
+        // sort genres and networks alphabetically for dropdown
+        $scope.availableGenres.sort();
+        $scope.availableNetworks.sort();
     })
     .error(function(){
         $('#loading').hide();

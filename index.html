@@ -1,7 +1,7 @@
 <!doctype html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Upcoming TV Show Premieres</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -40,11 +40,11 @@
                     <div>
                         <!-- <span>Genre</span>  -->
                         <select data-ng-model="genreFilter" data-ng-options="genre for genre in availableGenres">
-                            <option value="">Genre</option>
+                            <option value="">-- Genre --</option>
                         </select>
                          <!-- <span>Network</span>  -->
                         <select data-ng-model="networkFilter" data-ng-options="network for network in availableNetworks | orderBy:network">
-                            <option value="">Network</option>
+                            <option value="">-- Network --</option>
                         </select> 
                         <input type="checkbox" value="series_premieres" id="sort-premieres" data-ng-model="filter_series_premieres"><span id="sort-premieres-text"><label for=sort-premieres>Series Premieres</span>
                     </div>
@@ -79,10 +79,12 @@
                     </td>
                     <td>{{ tvshow.show.airdate }} <br /> {{ tvshow.show.airtime }}</td>
                     <td>{{ tvshow.episode.season }}</td>
-                    <td><ul id="more-info-list">
-                        <li data-ng-show="tvshow.show.ids.slug"><a href="http://trakt.tv/shows/{{tvshow.show.ids.slug}}" target="_blank">TraktTV</a><li>
-                        <li data-ng-show="tvshow.show.ids.imdb"><a href="http://www.imdb.com/title/{{tvshow.show.ids.imdb}}" target="_blank">IMDB</a><li>
-                        <li data-ng-show="tvshow.show.ids.tvrage"><a href="http://www.tvrage.com/shows/id-{{tvshow.show.ids.tvrage}}" target="_blank">TVRage</a><li>
+                    <td>
+                        <ul id="more-info-list">
+                            <li data-ng-show="tvshow.show.trailer"><a href="{{tvshow.show.trailer}}" target="_blank">View Trailer</a><li>
+                            <li data-ng-show="tvshow.show.ids.slug"><a href="http://trakt.tv/shows/{{tvshow.show.ids.slug}}" target="_blank">TraktTV</a><li>
+                            <li data-ng-show="tvshow.show.ids.imdb"><a href="http://www.imdb.com/title/{{tvshow.show.ids.imdb}}" target="_blank">IMDB</a><li>
+                            <li data-ng-show="tvshow.show.ids.tvrage"><a href="http://www.tvrage.com/shows/id-{{tvshow.show.ids.tvrage}}" target="_blank">TVRage</a><li>
                         </ul>
                     </td>
                 </tr>                
