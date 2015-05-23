@@ -38,6 +38,7 @@ app.controller('MainController', function($scope,$http,premieresService){
                  if (tvshow.show.network == 'Netflix') {
                     tvshow.show.airdate = 'N/A';
                     tvshow.show.timezone = '';
+                    tvshow.show.airtime = '';
                  }
             }
             else {
