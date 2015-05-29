@@ -68,7 +68,7 @@
                     <th>More Info</th>
                 </tr>
 
-                <tr ng-repeat="tvshow in tvshows | orderBy:sortOrder | genres:genreFilter | networks:networkFilter | seriespremiere:filter_series_premieres | filter:searchText | limitTo:paginationLimit()" ng-cloak>
+                <tr ng-repeat="tvshow in filteredtvshows = (tvshows | orderBy:sortOrder | genres:genreFilter | networks:networkFilter | seriespremiere:filter_series_premieres | filter:searchText | limitTo:paginationLimit())" ng-cloak>
                     <td><span class="show-title">{{ tvshow.show.title }}<span> <br><a href="#" class="show-overview" qtip="tvshow.show.overview">Overview</a></td>
                     <td>{{ tvshow.episode.date }}</td>
                     <td>{{ tvshow.show.network }}</td>
@@ -90,7 +90,7 @@
                 </tr>                
             </table>
             <div id="loading"><img src="images/loading.gif" /></div>
-        <button class="view-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()" ng-cloak>View More</button>
+            <button class="view-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()" ng-cloak>View More</button>
         </div>
     </div>
 
