@@ -1,3 +1,5 @@
+[ng\:cloak],[ng-cloak],.ng-cloak{display:none !important}
+
 header {
     height: 110px;
     margin-bottom: 40px;
