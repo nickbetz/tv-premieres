@@ -8,7 +8,7 @@ app.controller('MainController', function($scope,$http,premieresService){
     $scope.genreFilter = null;
     $scope.networkFilter = null;
 
-    var mainNetworks = ['CBS','NBC','FOX (US)','The CW','ABC (US)','PBS','AMC','HBO','A&E','E!','Bravo','Comedy Central','MTV','ABC Family','Disney Channel','Showtime','Netflix'];
+    var mainNetworks = ['CBS','NBC','FOX (US)','The CW','ABC (US)','PBS','AMC','HBO','A&E','E!','Bravo','Comedy Central','MTV','ABC Family','Disney Channel','Showtime','Netflix','USA Network','FX','TBS'];
     var networkFilteredList = [];
     var pageSize = 20;
     var pagesShown = 1;
@@ -100,10 +100,10 @@ app.controller('MainController', function($scope,$http,premieresService){
         var central = hours - 1;
     
         if(minutes > 0) {
-            formattedAirTime = hours +':' +minutes +'/' +central+':' +minutes +' central';
+            formattedAirTime = hours +':' +minutes +'/' +central+':' +minutes +' Central';
         }
         else {
-            formattedAirTime = hours +'/' + central +' central';
+            formattedAirTime = hours +'/' + central +' Central';
         }
 
         return formattedAirTime;

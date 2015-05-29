@@ -190,11 +190,13 @@ ul li {
 .qtipCustom{
     background-color: #ddd;
     border-color: #999;
-    max-width: 450px;
+    max-width: 550px;
 }
 
 .qtipCustom .qtip-content{
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px 10px;
 }
 
 .view-more {
