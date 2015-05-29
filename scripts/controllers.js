@@ -8,7 +8,7 @@ app.controller('MainController', function($scope,$http,premieresService){
     $scope.genreFilter = null;
     $scope.networkFilter = null;
     $scope.modulus = 0;
-    
+    $scope.contentLoaded = false;
 
     var mainNetworks = ['CBS','NBC','FOX (US)','The CW','ABC (US)','PBS','AMC','HBO','A&E','E!','Bravo','Comedy Central','MTV','ABC Family','Disney Channel','Showtime','Netflix','USA Network','FX','TBS'];
     var networkFilteredList = [];
@@ -73,6 +73,8 @@ app.controller('MainController', function($scope,$http,premieresService){
         // sort genres and networks alphabetically for dropdown
         $scope.availableGenres.sort();
         $scope.availableNetworks.sort();
+
+        $scope.contentLoaded = true;
     })
     .error(function(){
         $('#loading').hide();

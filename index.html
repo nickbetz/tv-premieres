@@ -90,7 +90,7 @@
                 </tr>                
             </table>
             <div id="loading"><img src="images/loading.gif" /></div>
-            <button class="view-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()" ng-cloak>View More</button>
+            <button class="view-more" ng-show="hasMoreItemsToShow() && contentLoaded" ng-click="showMoreItems()" ng-cloak>View More</button>
         </div>
     </div>
 
