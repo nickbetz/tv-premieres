@@ -1,0 +1,229 @@
+[ng\:cloak],[ng-cloak],.ng-cloak{display:none !important}
+
+header {
+    height: 110px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 675px;
+}
+
+header img {
+    float: left;
+}
+
+h1 {
+    color: #d19c2c;
+    left: 25px;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    top: 45px;
+}
+
+td,th {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #5EA2A7;
+    color: white;
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+.sort-toggle {
+    background-image: url('../images/toggle-expand.png');
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 20px;
+}
+
+.sort-toggle.expanded {
+    background-image: url('../images/toggle-collapse.png');
+}
+
+
+.sort-text, .filter-text {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.filter-text {
+    margin-left: 50px;
+}
+
+.sortbar-container {
+    background-color: #fff;
+    clear: both;
+    display: none;
+    height: 60px;
+}
+
+.sortbar {
+    border: 3px solid #5EA2A7;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    float: right;
+    margin-top: 7px;
+    padding: 10px 10px 5px;
+    position: relative;
+    width: 800px;
+}
+
+.sortbar label, select {
+    margin-right:10px;
+    color: #2f4146;
+}
+
+.sortbar span {
+    margin-right: 5px;
+}
+
+label[for=sort-premieres]{
+    margin-left: 5px;
+}
+
+.sortbar span {
+    font-weight: bold;
+}
+
+.sortbar input {
+    font-size: 12px;
+}
+
+.sort, .filter, .search {
+    float: left;
+}
+
+.sort {
+    margin-right: 40px;
+    width: 110px;
+}
+
+.sort img {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    padding-top: 7px;
+}
+
+.sort label {
+    margin: 0;
+}
+
+.filter {
+    margin-right: 40px;
+    width: 320px;
+}
+
+.filter img {
+    float: left;
+    margin-right: 20px;
+}
+
+.search {
+
+}
+
+.search input {
+    border-radius: 10px;
+    font-size: 16px;
+    height: 30px;
+    width: 220px;
+}
+
+#showsList {
+    color: #4F6B74;
+    width: 100%;
+}
+
+tr {
+    background-color: #f9f9f9;
+}
+
+tr:first-child {
+    border-bottom: none;
+}
+
+tr:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.table-container {
+    background-color: #f9f9f9;
+    clear: both;
+    padding-bottom: 10px;
+}
+
+.show-title {
+    font-weight: bold;
+}
+
+.show-overview {
+    font-size: 12px;
+    width: 550px;
+}
+
+.genre {
+    text-transform: capitalize;
+}
+
+.qtipCustom{
+    background-color: #ddd;
+    border-color: #999;
+    max-width: 550px;
+}
+
+.qtipCustom .qtip-content{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px 10px;
+}
+
+.view-more {
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: 6px;
+    display: block;
+    font-size: 17px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 500px;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.feed-error {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+select option:first-child {
+    font-size: 12px;
+}
